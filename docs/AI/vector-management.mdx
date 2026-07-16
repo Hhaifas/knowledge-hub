@@ -1,0 +1,18 @@
+---
+id: vector-db
+title: 6. Konfigurasi Vector Database
+sidebar_position: 6
+---
+
+# Penyimpanan dan Indeks Vektor
+
+Konfigurasi pengindeksan untuk memastikan pencarian berbasis RAG memiliki latensi rendah.
+
+## Parameter Indeks
+
+- **Metrik Jarak:** _Cosine Similarity_ (direkomendasikan untuk teks _embedding_).
+- **Dimensi:** 1536 (menyesuaikan dengan output `text-embedding-ada-002`).
+
+## Strategi Chunking
+
+Dokumen dipotong (_chunked_) dengan ukuran 500 token dan _overlap_ 50 token agar konteks paragraf tidak terputus.

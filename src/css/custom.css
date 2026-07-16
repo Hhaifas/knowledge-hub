@@ -1,0 +1,458 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+
+@import url('https://unpkg.com/neobrutalismcss@1.0.0');
+
+:root {
+  --background: oklch(95.38% 0.0357 72.89);
+  --main-background: #fff;
+  --feature-bg: #164578;
+  --navbar-bg: #cacaca;
+  --main: #cacaca;
+  --border: oklch(0% 0 0);
+  --ring: oklch(0% 0 0);
+  --overlay: oklch(0% 0 0 / 0.8);
+  --shadow: 4px 2px 0px 0px var(--border);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --nb-text-color: #000;
+  --footer-text: #000;
+  --button: #164578;
+  --button-hover: #3b86ff;
+  --button2: #d3f522;
+  --text-color: #fff;
+  --text-color2: #d3f522;
+  --text-color3: #131415;
+  --border-line: #131415;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --background: oklch(26.86% 0.0327 60.06);
+  --main-background: #000;
+  --feature-bg: #dfe9ff;
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(67.56% 0.1796 49.61);
+  /* --border: #fff; */
+  --ring: oklch(100% 0 0);
+  /* --shadow: 4px 2px 0px 0px var(--border); */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --nb-text-color: #000;
+  --footer-text: #fff;
+  --button: #dfe9ff;
+  /* --buton-hover:  */
+  --text-color: #000;
+  --text-color2: #164578;
+  --border-line: #cacaca;
+}
+
+/* navbar */
+.navbar {
+  background-color: var(--navbar-bg);
+  border-bottom: 4px solid var(--border-line);
+  color: var(--nb-text-color);
+  /* box-shadow: var(--shadow); */
+}
+
+.navbar__link {
+  font-weight: 800;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 4px 10px;
+  transition: all 0.15s ease;
+  color: var(--nb-text-color);
+}
+
+.navbar__link:hover {
+  border: 2px solid var(--border, #000);
+  background: var(--button);
+  box-shadow: 1px 0 0 0 var(--border, #000);
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.navbar__link--active {
+  /* background: #ff6b6b; */
+  background: var(--button2);
+  box-shadow: 1px 0 1px 0 var(--border, #000);
+  border: 3px solid var(--border, #000);
+  color: var(--text-color3);
+}
+
+.navbar__logo {
+  filter: drop-shadow(2px 2px 0 #000);
+}
+
+.navbar__title {
+  color: var(--nb-text-color);
+}
+
+/* search bar */
+.navbar__search-input {
+  border: 3px solid var(--border);
+  border-radius: 0;
+  box-shadow: 0 0 0 0 var(--border, #000);
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.navbar__search-input:focus {
+  outline: none;
+  transform: translate(-2px, -2px);
+  box-shadow: 0 0 0 0 var(--border, #000);
+  border: 3px solid var(--border, #000);
+  /* background-color: var(--ifm-background-color); */
+}
+
+.navbar__search-input::placeholder {
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.heroBanner {
+  background-color: var(--main);
+}
+
+/* buttons */
+.nb-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--border, #000);
+  background-color: var(--button);
+  box-shadow: 0px 0px 0 0 var(--border, #000);
+  color: var(--text-color);
+  text-transform: uppercase;
+  font-weight: 800;
+  padding: 10px 10px;
+  max-width: fit-content;
+  margin-top: 2rem;
+  margin: 0 auto;
+}
+
+.nb-buttons:hover {
+  text-decoration: none;
+  background-color: var(--button-hover);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--border, #000);
+}
+
+/* sidebar */
+.menu {
+  border-right: 3px solid var(--border-line);
+}
+
+.menu__link {
+  font-weight: 600;
+  border-radius: 0;
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.menu__link:hover {
+  background: var(--button);
+  border: 2px solid var(--border, #000);
+  color: var(--text-color);
+}
+
+.menu__link--active {
+  /* background: #ffde59; */
+  background: var(--button2);
+  box-shadow: 0 0 0 0 var(--border, #000);
+  border: 2px solid var(--border, #000);
+  font-weight: 800;
+  color: var(--text-color3);
+}
+
+.menu__link--sublist-caret:after {
+  filter: contrast(2);
+}
+
+a.menu__link--sublist--active {
+  background: var(--button2);
+  box-shadow: 0 0 0 0 var(--border, #000);
+  border: 2px solid var(--border, #000);
+  font-weight: 800;
+  color: var(--text-color3);
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  color: var(--footer-text);
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs__link {
+  /* border: 2px solid var(--nb-border-color); */
+  border-radius: 0;
+  padding: 3px 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  background: transparent;
+  /* color: var(--nb-body-text-color);
+  box-shadow: 2px 2px 0 0 var(--nb-shadow-color); */
+  transition: all 0.15s ease;
+}
+
+.breadcrumbs__link:hover {
+  transform: translate(-1px, -1px);
+  /* box-shadow: 3px 3px 0 0 var(--nb-shadow-color); */
+  /* background: #a8dadc; */
+  text-decoration: none;
+}
+
+/* Item terakhir/aktif (halaman saat ini) */
+.breadcrumbs__item--active .breadcrumbs__link {
+  color: var(--footer-text);
+  font-weight: 500;
+}
+
+/* Separator antar breadcrumb (default Infima pakai ::after) */
+.breadcrumbs__item:not(:last-child)::after {
+  filter: contrast(1.3);
+  opacity: 0.7;
+  color: var(--footer-text);
+}
+
+/* Icon home */
+.breadcrumbs__link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* table of content */
+.table-of-contents {
+  border-left: 3px solid var(--border-line);
+}
+
+.table-of-contents__link {
+  font-weight: 600;
+  border-radius: 0; /* brutalism = no rounded corners */
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.table-of-contents__link:hover {
+  color: var(--footer-text);
+}
+
+.table-of-contents__link--active {
+  /* background: #ffde59; */
+  background: var(--button2);
+  box-shadow: 0 0 0 0 var(--border, #000);
+  border: 2px solid var(--border, #000);
+  font-weight: 800;
+  color: var(--text-color3);
+}
+
+.table-of-contents__link--sublist-caret:after {
+  filter: contrast(2);
+}
+
+/* pagination */
+.pagination-nav {
+  gap: 16px;
+}
+
+.pagination-nav__link {
+  border: 3px solid var(--border, #000);
+  border-radius: 0;
+  box-shadow: 0 0 0 0 var(--border, #000);
+  /* background: var(--button); */
+  transition: all 0.15s ease;
+  padding: 12px 16px;
+}
+
+.pagination-nav__link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow);
+  /* background: #a8dadc; */
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.pagination-nav__link:active {
+  transform: translate(0, 0);
+  box-shadow: var(--shadow);
+  color: var(--text-color);
+}
+
+.pagination-nav__sublabel {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+  color: var(--text-color2);
+}
+
+.pagination-nav__label {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--text-color);
+}
+
+/* Aksen warna beda untuk bedain Previous vs Next, opsional */
+.pagination-nav__link--prev,
+.pagination-nav__link--next {
+  background: var(--button);
+}
+
+/* edit page button */
+.theme-edit-this-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 3px solid var(--border, #000);
+  border-radius: 0;
+  padding: 8px 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  background: var(--button);
+  color: var(--text-color);
+  box-shadow: 1px 1px 0 0 var(--border, #000);
+  transition: all 0.15s ease;
+}
+
+.theme-edit-this-page svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.theme-edit-this-page:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 0 var(--border, #000);
+  /* background: var(--button-hover); */
+  text-decoration: none;
+}
+
+.theme-edit-this-page:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 0 var(--border, #000);
+}
+
+/* footer */
+.footer {
+  border-top: 4px solid var(--border-line);
+  background-color: var(--navbar-bg);
+}
+
+.footer__title {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1rem;
+  border-bottom: 3px solid var(--nb-border-color);
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+  display: inline-block;
+  color: var(--nb-text-color);
+}
+
+.footer__link-item {
+  font-weight: 600;
+  transition: all 0.15s ease;
+  display: inline-block;
+  color: var(--nb-text-color);
+}
+
+.footer__link-item:hover {
+  color: var(--nb-text-color);
+  padding: 0 6px;
+  /* box-shadow: 2px 2px 0 0 var(--border); */
+  text-decoration: none;
+}
+
+.footer__bottom {
+  /* border-top: 3px solid var(--border); */
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+.footer__copyright {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--nb-text-color);
+}
+
+/* .footer__logo {
+  border: 3px solid var(--nb-border-color);
+  box-shadow: 4px 4px 0 0 var(--nb-shadow-color);
+  padding: 4px;
+} */
+
+/* TEKS */
+.navbar__link--active,
+.table-of-contents__link:active {
+  color: var(--nb-text-color) !important;
+}
+
+/* card article di dalam document*/
+.theme-doc-card-container {
+  box-shadow: 0 0 0 0 var(--border, #000);
+  border-radius: 0;
+  border: 3px solid var(--border, #000);
+}
+
+/* tampilan homepage di awal halaman bagian tengah setelah marquee */
+.homepage-features {
+  background: var(--button); /* warna aksen brutalism kamu */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 4px solid var(--border);
+  border-bottom: 4px solid var(--border);
+}
+
+/* article di dalam page document */
+.nb-card {
+  box-shadow: 1px 0 0 0 var(--border, #000);
+}
+
+.theme-doc-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.theme-doc-card-icon {
+  font-size: 1.1rem;
+  filter: contrast(1.2);
+}
+
+.theme-doc-card-title {
+  color: var(--footer-text) !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.theme-doc-card-description {
+  color: var(--footer-text) !important;
+  opacity: 0.8;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Hover state - background berubah terang, teks dipaksa hitam */
+.theme-doc-card-container:hover .theme-doc-card-title,
+.theme-doc-card-container:hover .theme-doc-card-description {
+  color: #000 !important;
+  opacity: 1;
+}

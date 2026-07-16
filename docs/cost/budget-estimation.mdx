@@ -1,0 +1,24 @@
+---
+id: budget-estimation
+title: 1. Estimasi Biaya Infrastruktur
+sidebar_position: 1
+---
+
+# Manajemen Biaya & Cloud Budgeting
+
+Dokumen ini merinci estimasi pengeluaran operasional (OpEx) untuk menjalankan pipeline AI dan infrastruktur internal.
+
+## Komponen Biaya Cloud (Pay-as-you-go)
+
+Pengeluaran utama pada layanan _cloud_ berasal dari pemrosesan Large Language Model dan Speech-to-Text:
+
+1. **Azure OpenAI (LLM Engine):** * Dihitung berdasarkan *token* (input dan output) saat menjalankan *summarize_node* dan *action_item_node\* di LangGraph.
+2. **Whisper API:**
+   - Dihitung per menit audio yang diproses ($0.006 / menit). Kompresi audio sangat diwajibkan untuk efisiensi biaya.
+
+## Komponen Biaya Self-Hosted
+
+Untuk menjaga privasi dan menghindari biaya _subscription_ cloud storage bulanan, kita menggunakan infrastruktur lokal:
+
+- **Hardware:** Pengadaan _Network Attached Storage_ (NAS).
+- **Operasional:** Biaya listrik dan internet statis untuk menjaga _uptime_ server tetap berjalan 24/7.

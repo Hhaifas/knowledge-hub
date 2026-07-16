@@ -1,0 +1,18 @@
+---
+id: privacy-compliance
+title: 2. Privasi Data & Kepatuhan
+sidebar_position: 2
+---
+
+# Kebijakan Privasi Data Internal
+
+Sistem pengolahan dokumen dan notulensi menangani informasi yang bersifat rahasia. Kebijakan ini memastikan bahwa data tidak disalahgunakan atau diekspos ke pihak ketiga yang tidak berkepentingan.
+
+## Kebijakan Retensi Dokumen
+
+1. **Audio Mentah:** Semua rekaman audio yang diproses oleh _agentic workflow_ harus dihapus dari _storage_ sementara maksimal 24 jam setelah proses _Speech-to-Text_ selesai.
+2. **Hasil Transkrip:** Disimpan di dalam server lokal (NAS) dan tidak boleh diunggah ke layanan _cloud storage_ publik tanpa enkripsi.
+
+## Penghindaran Risiko Pihak Ketiga
+
+Untuk layanan analitik dan penyimpanan media internal, sistem secara ketat menggunakan solusi _self-hosted_ (seperti _container_ Docker lokal) guna mencegah penambangan data (_data mining_) dari penyedia layanan pihak ketiga.

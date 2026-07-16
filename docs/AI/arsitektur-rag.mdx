@@ -1,0 +1,17 @@
+---
+id: architecture-rag
+title: 2. Arsitektur RAG (Retrieval-Augmented Generation)
+sidebar_position: 2
+---
+
+# Arsitektur Pipeline RAG
+
+Sistem _chatbot_ internal kita menggunakan arsitektur RAG untuk memastikan LLM memberikan jawaban berdasarkan dokumen internal, bukan halusinasi.
+
+## Alur Data (Data Flow)
+
+1. **Ingestion:** Dokumen mentah diurai menggunakan pustaka dokumen.
+2. **Embedding:** Teks diubah menjadi vektor menggunakan model _embedding_.
+3. **Penyimpanan:** Vektor disimpan di Vector Database.
+4. **Retrieval:** Kueri pengguna diubah menjadi vektor untuk mencari konteks yang paling mirip.
+5. **Generation:** Konteks disuntikkan ke _prompt_ LangChain untuk menghasilkan jawaban.

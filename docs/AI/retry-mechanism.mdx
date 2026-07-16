@@ -1,0 +1,21 @@
+---
+id: self-host-storage
+title: 5. Keamanan Data & Self-Hosting
+sidebar_position: 5
+---
+
+# Infrastruktur Penyimpanan Lokal
+
+Untuk menjaga privasi data sensitif dari pihak ketiga, beberapa layanan _cloud_ menggunakan solusi _self-hosted_.
+
+## Setup NAS (Network Attached Storage)
+
+Penyimpanan dokumen internal dan media (menggunakan Immich) dijalankan melalui _container_ Docker.
+
+## Konfigurasi Docker Compose
+
+Berjalan pada jaringan _bridge_ internal tanpa eksposur _port_ langsung ke internet, kecuali
+
+```
+
+```

@@ -1,0 +1,24 @@
+---
+id: backup-recovery
+title: 2. Pencadangan & Pemulihan (Disaster Recovery)
+sidebar_position: 2
+---
+
+# Strategi Pencadangan dan Pemulihan
+
+Dokumen ini mendefinisikan prosedur standar untuk melindungi data operasional dan _vector embeddings_ dari kerusakan perangkat keras atau kesalahan sistem.
+
+## Jadwal Pencadangan (Backup Schedule)
+
+Proses _backup_ berjalan secara otomatis menggunakan _cron job_ di server NAS:
+
+- **Harian (Daily):** Pencadangan _state_ dari _database_ operasional dan repositori dokumen Markdown pada pukul 02:00 WIB.
+- **Mingguan (Weekly):** Snapshot lengkap dari _Docker volumes_ (termasuk penyimpanan media dan _Vector Database_).
+
+## Prosedur Pemulihan (Recovery)
+
+Jika terjadi kegagalan sistem utama:
+
+1. Matikan semua layanan _container_ yang aktif.
+2. _Mount volume backup_ terbaru ke direktori yang sesuai.
+3. Jalankan skrip `restore.sh` untuk melakukan sinkronisasi ulang _index database_ sebelum sistem dihidupkan kembali.

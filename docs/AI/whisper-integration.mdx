@@ -1,0 +1,15 @@
+---
+id: whisper-integration
+title: 8. Integrasi Speech-to-Text
+sidebar_position: 8
+---
+
+# Protokol Transkripsi Audio
+
+Audio rapat perlu diproses sebelum dikirim ke Whisper API agar proses transkripsi efisien dan tidak melebihi limit ukuran file.
+
+## Prapemrosesan (Preprocessing)
+
+1. Konversi format dari `.m4a` atau `.wav` ke `.mp3`.
+2. Kompresi _bitrate_ hingga 64kbps jika ukuran file > 25MB.
+3. Pemisahan (Split) file menjadi beberapa bagian 10 menit jika durasi rapat terlalu panjang.

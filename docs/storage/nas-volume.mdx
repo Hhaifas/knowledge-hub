@@ -1,0 +1,21 @@
+---
+id: nas-and-volumes
+title: 1. Manajemen Penyimpanan
+sidebar_position: 1
+---
+
+# Arsitektur Penyimpanan File (Storage)
+
+Untuk mengelola file mentah seperti audio rapat, media, dan dokumen _Markdown_, kita memisahkan penyimpanan sementara (_ephemeral_) dan penyimpanan permanen (_persistent_).
+
+## Persistent Storage (NAS & Docker Volumes)
+
+Infrastruktur _self-hosted_ mengandalkan NAS sebagai pusat penyimpanan.
+
+- **Docker Volumes:** Digunakan agar data (seperti file _database_ atau media Immich) tidak hilang ketika _container_ di-_restart_ atau di-_rebuild_.
+- **Backup:** Sinkronisasi berkala dilakukan dari _volume_ utama ke _drive_ cadangan setiap minggu.
+
+## Pemrosesan File Sementara
+
+- File audio (mentahan rapat) yang akan diolah oleh `transcribe_node` disimpan di penyimpanan _temporary_.
+- Setelah transkripsi selesai dan dikonversi menjadi teks, file audio `.mp3` / `.wav` berukuran besar akan dihapus dari _server_ untuk menghemat kapasitas penyimpanan.

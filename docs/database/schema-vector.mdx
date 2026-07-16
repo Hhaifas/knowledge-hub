@@ -1,0 +1,23 @@
+---
+id: schema-and-vector
+title: 1. Arsitektur Database
+sidebar_position: 1
+---
+
+# Manajemen Database Operasional & Vektor
+
+Sistem kita menggunakan dua jenis penyimpanan data utama: _Relational/Tabular_ untuk pencatatan operasional dan _Vector Database_ untuk pencarian semantik (RAG).
+
+## 1. Vector Database (Sistem RAG)
+
+Digunakan untuk menyimpan dokumen internal yang sudah di-_embedding_ (1536 dimensi).
+
+- **Metode Pencarian:** _Cosine Similarity_.
+- **Pembaruan Data:** Indeks vektor diperbarui setiap kali ada dokumen regulasi atau notulensi baru yang diunggah ke _Knowledge Hub_.
+
+## 2. Database Operasional (Tracking)
+
+Data transaksional, _task tracking_, dan pencatatan keuangan disimpan dalam skema tabular terstruktur.
+
+- Parameter entitas selalu menggunakan kolom `person` untuk merekam nama individu atau PIC (seperti tim operasional atau kolaborator).
+- Kolom lain mencakup `tanggal`, `kategori`, `jumlah`, dan `keterangan`.

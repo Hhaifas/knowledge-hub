@@ -1,0 +1,19 @@
+---
+id: langgraph-nodes
+title: 3. Alur Kerja Agentic (LangGraph)
+sidebar_position: 3
+---
+
+# Desain Node pada LangGraph
+
+Dalam membangun _agentic workflow_, setiap tugas didefinisikan sebagai _node_ graf.
+
+## Definisi Node
+
+- **`transcribe_node`**: Memanggil Whisper API untuk mengubah audio menjadi teks.
+- **`summarize_node`**: Mengirim transkrip ke Azure OpenAI untuk ekstraksi poin penting.
+- **`action_item_node`**: Mengekstrak daftar tugas yang diberikan kepada tim.
+
+## Transisi (Edges)
+
+Jika `transcribe_node` gagal, alur akan dialihkan ke `fallback_node` untuk notifikasi error.

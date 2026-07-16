@@ -1,0 +1,19 @@
+---
+id: sheets-api-service
+title: 2. Layanan API Google Sheets
+sidebar_position: 2
+---
+
+# Integrasi GoogleSheetsService
+
+Selain Vector Database, sistem operasional kita sangat bergantung pada Google Sheets sebagai antarmuka _database_ yang mudah dibaca oleh non-developer, terutama untuk modul `FinanceAIService` dan pelacakan anggaran.
+
+## Alur Autentikasi
+
+1. Layanan menggunakan **Google Service Account**.
+2. Kredensial disimpan dalam format JSON dan diakses melalui _environment variable_ `GOOGLE_APPLICATION_CREDENTIALS`.
+
+## Standar Operasi CRUD
+
+- **Create:** Penambahan baris data baru untuk setiap eksekusi selesai (misal: pencatatan tugas PMO atau pengeluaran). Selalu pastikan variabel parameter dikirim menggunakan _key_ `person` untuk mendefinisikan entitas.
+- **Read:** Sinkronisasi _cache_ lokal setiap 15 menit untuk mengurangi beban kuota pemanggilan Google API (Google API Rate Limits).

@@ -1,0 +1,20 @@
+---
+id: monitoring-alerts
+title: 2. Sistem Pemantauan & Peringatan
+sidebar_position: 2
+---
+
+# Pemantauan Biaya API dan Peringatan
+
+Untuk mencegah pembengkakan tagihan (_bill shock_) pada layanan _cloud_ berbasis _pay-as-you-go_, kita menerapkan sistem peringatan otomatis.
+
+## Parameter Peringatan (Alerts)
+
+Peringatan akan dikirimkan secara otomatis melalui integrasi _bot_ Telegram (menggunakan modul _messaging_ yang sama dengan Fafa Bot) jika metrik berikut terpenuhi:
+
+1. **Limit Token Harian:** Penggunaan Azure OpenAI melebihi ambang batas 50.000 token dalam 24 jam.
+2. **Limit Transkripsi:** Pemanggilan Whisper API melebihi batas 120 menit audio dalam satu minggu.
+
+## Tindakan Pencegahan
+
+Jika peringatan terpicu, _node_ pada LangGraph yang memanggil eksekusi LLM akan otomatis dijeda (_paused_) hingga mendapat persetujuan manual (pembukaan limit) dari administrator.

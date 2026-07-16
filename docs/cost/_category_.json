@@ -1,0 +1,8 @@
+{
+  "label": "Cost",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Cost Management resources are the backbone of any cloud infrastructure. Learn how to create and manage virtual machines, auto-scaling groups, and more."
+  }
+}

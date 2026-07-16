@@ -1,0 +1,19 @@
+---
+id: access-control
+title: 1. Protokol Keamanan & Akses
+sidebar_position: 1
+---
+
+# Keamanan Data dan Jaringan
+
+Protokol ini wajib dipatuhi oleh seluruh anggota tim untuk memastikan tidak ada kebocoran kredensial atau data sensitif.
+
+## Manajemen Kredensial (API Keys)
+
+- Semua kunci API (Azure OpenAI, dll.) **dilarang keras** di-_commit_ ke repositori Git.
+- Gunakan file `.env` di lingkungan lokal dan _Secret Variables_ saat melakukan _deployment_ (CI/CD).
+
+## Keamanan Infrastruktur Self-Hosted
+
+- **Isolasi Docker:** Semua layanan berbasis _container_ berjalan di atas Docker _bridge network_ internal. Container _database_ tidak mengekspos _port_ langsung ke internet.
+- **Reverse Proxy:** Akses dari luar (internet) ke NAS atau layanan lokal harus melewati _reverse proxy_ dengan sertifikat SSL/TLS yang valid.

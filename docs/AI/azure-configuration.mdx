@@ -1,0 +1,17 @@
+---
+id: azure-openai
+title: 4. Konfigurasi Azure OpenAI
+sidebar_position: 4
+---
+
+# Konfigurasi Akses Azure OpenAI
+
+Untuk mengakses model bahasa, parameter berikut harus dikonfigurasi secara aman di _environment variables_ (jangan _commit_ file `.env` ke _repository_).
+
+## Parameter Kredensial
+
+```env
+AZURE_OPENAI_API_KEY=your_secure_key
+AZURE_OPENAI_ENDPOINT=[https://your-instance.openai.azure.com/](https://your-instance.openai.azure.com/)
+OPENAI_API_VERSION=2024-02-15-preview
+```
