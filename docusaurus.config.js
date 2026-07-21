@@ -95,11 +95,16 @@ const config = {
             label: 'Document',
           },
           // { to: '/blog', label: 'Blog', position: 'left' },
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   href: 'https://github.com/facebook/docusaurus',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
+          // {
+          //   label: 'Upload',
+          //   position: 'right',
+          //   href: '/admin/upload',
+          // },
         ],
       },
       footer: {
@@ -140,7 +145,7 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/Hhaifas/knowledge-hub',
               },
             ],
           },
