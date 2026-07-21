@@ -2,7 +2,7 @@ import Link from '@docusaurus/Link';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-const CategoryList = [
+const FeatureList = [
   {
     title: 'Database',
     image: '/img/just-little.svg',
@@ -37,7 +37,7 @@ function Feature({ image, title, description, link }) {
   return (
     <div className="category">
       <div className="nb-card">
-        <img src={image} className="nb-card-img" alt={title} />
+        {/* <img src={image} className="nb-card-img" alt={title} /> */}
         <div className="nb-card-content">
           <Heading as="h4" className="nb-card-title">
             {title}
@@ -58,13 +58,19 @@ export default function HomepageFeatures() {
   return (
     <section className="padding-vert--lg homepage-features">
       <div className="container">
-        <div className="row" style={{ justifyContent: 'center' }}>
+        <div className="nb-grid">
+          {FeatureList.map((props, idx) => (
+            <Feature key={idx} {...props} />
+          ))}
+        </div>
+        {/* <div className="nb-grid" style={{ justifyContent: 'center' }}>
           {CategoryList.map((props, idx) => (
             <div key={idx} className="col col--4 margin-bottom--lg">
               <Feature {...props} />
             </div>
           ))}
         </div>
+       */}
       </div>
     </section>
   );
